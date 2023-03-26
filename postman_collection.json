@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "73ef6896-a9fa-43a0-b5d3-8b449c1c1da7",
+		"name": "FORM ADV ADVISERS Sample[20-03-2023]",
+		"description": "#### FORM ADV ADVISERS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26452603"
+	},
+	"item": [
+		{
+			"name": "ADVISER FILINGS",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "Bearer RI8db41Hy8PmEbEKnr14ep3Ys4l8fp",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://radientanalytics.com/form-adv-api/v1/firms/?crd=7691",
+					"protocol": "https",
+					"host": [
+						"radientanalytics",
+						"com"
+					],
+					"path": [
+						"form-adv-api",
+						"v1",
+						"firms",
+						""
+					],
+					"query": [
+						{
+							"key": "crd",
+							"value": "7691"
+						}
+					]
+				},
+				"description": "Form ADV contains information about an adviser’s identifying information, form of organization, SEC registration information, regulatory information, firm details, advisory businesses, financial industry affiliations, private fund reporting, control persons, additional services, related person information, transactions/discretion/referrals, client custody information, disclosure information, and possibly state registration information. In addition, there is schedule information regarding owners and executives, service providers and DRPs.\n\ninformation regarding owners and executives, service providers and DRPs.  \nThe RADiENT Form ADV API returns all form details for a particular adviser by CRD number. Each successful request returns an envelope (as shown above) containing a results hash that contains an object whose values include all fields from an adviser’s filing. You can also request information for specific sections on the form (these are mentioned under [API Responses](https://radientanalytics.com/web/#responses) above). If no section is specified, all sections will be returned.\n\n### **Parameters**\n\nPath Parameters:\n\n| **Name** | **Description** | **Type** | **Example** |\n| --- | --- | --- | --- |\n| crd | Adviser's CRD number | Integer(required) | 11245 |\n| section | Form ADV Section Name | String | identifying_info, organization_form,client_transactions, custody |"
+			},
+			"response": []
+		},
+		{
+			"name": "REPRESENTATIVE DETAILS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"description": "`https://radientanalytics.com/form-adv-api/v1/individuals/?crd=5739730`"
+			},
+			"response": []
+		}
+	]
+}
